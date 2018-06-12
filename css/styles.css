@@ -1,8 +1,8 @@
 body  {
   font-size: 1.5em;
   background-color: lightcyan;
-  /*padding: 6px;
-  margin: 6px;*/
+  padding: 6px;
+  margin: 6px;
 }
 
 .initial-hide {
@@ -11,4 +11,9 @@ body  {
 
 .mod-form {
   text-align: center;
+}
+
+.mod-div  {
+  padding: 6px;
+  margin: 6px;
 }

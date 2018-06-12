@@ -86,7 +86,7 @@ $(function(){
 
   $(".output-movie").text(this.movie.toString());
   $(".output-time").text(this.time);
-  //$(".output-type").text(this.type.toString());
+  $(".output-date").text(this.movieDate);
   $(".output-price").text(formatUSD(this.price));
   };
 
