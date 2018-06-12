@@ -3,11 +3,10 @@ $(function(){
   $("#form-movie").submit(function(event){
     event.preventDefault();
 
-    var inputMovie = parseInt($("#input-movie").val());
+    var inputMovie = $("#input-movie").val();
     var inputType = parseInt($("#input-type").val());
     var inputDate = $("#input-date").val();
     var inputTime = $("#input-time").val();
-    alert(parseInt(inputTime));
     var inputAge = parseInt($("#input-age").val());
 
     var newMovie = new Movie(inputMovie,inputType,inputDate,inputTime,inputAge);
@@ -24,7 +23,7 @@ $(function(){
     //   $("#show-task h2").text(newTask.taskName);
     //   newTask.output(".output-task",".output-description");
     // });
-    newMovie.price();
+    newMovie.calculatePrice();
     newMovie.output();
 
   });
@@ -56,7 +55,7 @@ $(function(){
   this.price = 10;
   }
 
-  Movie.prototype.price = function ()
+  Movie.prototype.calculatePrice = function()
   {
     var temp = this.price;
     if(this.type)
@@ -77,13 +76,26 @@ $(function(){
 
   Movie.prototype.output = function ()
   {
-  $("#output-movie").text(this.movie);
-  $("#output-time").text(this.time);
-  $("#output-type").text(this.type);
-  $("#output-price").text(this.price);
+    if(this.type)
+    {
+      $(".output-type").text("3D RMYX");
+    }
+    else {
+      $(".output-type").text("2D");
+    }
+
+  $(".output-movie").text(this.movie.toString());
+  $(".output-time").text(this.time);
+  //$(".output-type").text(this.type.toString());
+  $(".output-price").text(formatUSD(this.price));
   };
 
   function clear(temp)
   {
   $(temp).val("");
+  }
+
+  function formatUSD(tempString)
+  {
+    return tempString.toLocaleString('en-US',{style: 'currency', currency: 'USD'});
   }
