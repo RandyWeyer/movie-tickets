@@ -9,7 +9,51 @@
     <title>Movie Tickets</title>
   </head>
   <body class="container-fluid">
-    <h1>Movie Tickets</h1>
+    <h1 class="jumbotron">Movie Tickets</h1>
+    <div class="row panel panel-info">
+      <div class="col-md-6 panel panel-info mod-form">
+        <h2>Movie Selection:</h2>
+        <form id="form-movie">
+          <div>
+            <select id="input-movie">
+              <option value="0">The Avengers</option>
+              <option value="1">Iron Man</option>
+              <option value="2">Black Panther</option>
+              <option value="3">Doctor Strange</option>
+            </select>
+          </div>
+          <div>
+            <select id="input-type">
+              <option value="0">2D</option>
+              <option value="1">3D RMYX</option>
+            </select>
+          </div>
+          <div >
+            <label for="input-date">Date: </label>
+            <input id="input-date" type="date">
+          </div>
 
+          <div>
+            <label for="input-time">Time: </label>
+            <input id="input-time" type="time" value="05:00">
+          </div>
+          <div>
+            <label for="input-age">Age: </label>
+            <input id="input-age" type="number">
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+      <div id="ticket-info" class="row initial-hide">
+        <h2>Your Ticket Information:</h2>
+        <div class="col-md-6">
+          <h2><span class="output-movie"></span></h2>
+          <p>Type: <span class="output-type"></span></p>
+          <p>Time: <span class="output-time"></span></p>
+          <p>Price: <span class="output-price"></span></p>
+          <button id="task-remove" class="btn">Remove</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
